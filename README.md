@@ -1,5 +1,5 @@
-stack-clipboards
-================
+stack-clipboard
+===============
 This is a persistent stack clipboard. 
 * Calling `stack-clipboard.py push` pushes the current clipboard content into the stack which is stored in `~/.clipboard`.
 * Calling `stack-clipboard.py pop` pops the top of the stack and sets the new top as the clipboard content.
