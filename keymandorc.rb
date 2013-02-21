@@ -1,11 +1,11 @@
 start_at_login(true)
 
 map "<Cmd-c>" do
-    `/Users/santialbo/Developer/stack-clipboard/stack-clipboard.py push`
     send("<Cmd-c>")
+    `/Users/santialbo/Developer/stack-clipboard/stack-clipboard.py push`
 end
 
 map "<Shift-Cmd-v>" do
-    `/Users/santialbo/Developer/stack-clipboard/stack-clipboard.py pop`
     send("<Cmd-v>")
+    `/Users/santialbo/Developer/stack-clipboard/stack-clipboard.py pop`
 end
