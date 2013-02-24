@@ -5,6 +5,11 @@ map "<Cmd-c>" do
     `/Users/santialbo/Developer/stack-clipboard/stack-clipboard.py push`
 end
 
+map "<Cmd-x>" do
+    send("<Cmd-x>")
+    `/Users/santialbo/Developer/stack-clipboard/stack-clipboard.py push`
+end
+
 map "<Shift-Cmd-v>" do
     send("<Cmd-v>")
     `/Users/santialbo/Developer/stack-clipboard/stack-clipboard.py pop`
