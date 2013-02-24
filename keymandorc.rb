@@ -14,3 +14,7 @@ map "<Shift-Cmd-v>" do
     send("<Cmd-v>")
     `/Users/santialbo/Developer/stack-clipboard/stack-clipboard.py pop`
 end
+
+map "<Shift-Alt-Cmd-v>" do
+    `/Users/santialbo/Developer/stack-clipboard/stack-clipboard.py empty`
+end

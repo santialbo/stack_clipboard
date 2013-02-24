@@ -40,9 +40,14 @@ def pop():
             setcb(cb[-1])
     save_cb(cb)
 
+def empty():
+    cb = []
+    save_cb(cb)
 
 if len(sys.argv) == 2:
     if sys.argv[1] == "push":
         push()
     elif sys.argv[1] == "pop":
         pop()
+    elif sys.argv[1] == "empty":
+        empty()
