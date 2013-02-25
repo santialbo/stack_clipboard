@@ -35,8 +35,7 @@ def pop():
     save_cb(cb)
 
 def empty():
-    cb = []
-    save_cb(cb)
+    save_cb([])
 
 if len(sys.argv) == 2:
     if sys.argv[1] == "push":
