@@ -37,10 +37,11 @@ def pop():
 def empty():
     save_cb([])
 
-if len(sys.argv) == 2:
-    if sys.argv[1] == "push":
-        push()
-    elif sys.argv[1] == "pop":
-        pop()
-    elif sys.argv[1] == "empty":
-        empty()
+registered = {"push": push,
+              "pop": pop,
+              "empty": empty}
+
+if __name__ == '__main__':
+    _, cmd = sys.argv
+    if cmd in registered:
+        registered[cmd]()
