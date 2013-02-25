@@ -17,15 +17,12 @@ def open_cb(perm):
         return f
 
 def load_cb():
-    f = open_cb("rb")
-    cb = pickle.load(f)
-    f.close()
-    return cb
+    with open_cb("rb") as f:
+        return pickle.load(f)
 
 def save_cb(cb):
-    f = open_cb("wb")
-    pickle.dump(cb, f)
-    f.close()
+    with open_cb("wb") as f:
+        pickle.dump(cb, f)
 
 def push():
     cb = load_cb()
