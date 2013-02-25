@@ -3,18 +3,15 @@ from pyperclip import setcb, getcb
 import pickle
 import sys, os
 
-cb_path = os.path.join(os.path.expanduser("~"), ".clipboard")
+CB_PATH = os.path.join(os.path.expanduser("~"), ".clipboard")
 
 def open_cb(perm):
     try:
-        f = open(cb_path, perm)
-        return f
+        return open(CB_PATH, perm)
     except IOError:
-        f = open(cb_path, 'w+')
-        pickle.dump([], f)
-        f.close()
-        f = open(cb_path, perm)
-        return f
+        with open(CB_PATH, 'w+') as f:
+            pickle.dump([], f)
+        return open(CB_PATH, perm)
 
 def load_cb():
     with open_cb("rb") as f:
