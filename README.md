@@ -8,7 +8,7 @@ This is a persistent stack clipboard.
 Shortcut support
 ================
 I've added support for [keymando](http://keymando.com/) in the following way:
-* ⌘-c Pushes the selection into the stack.
-* ⌘-x Pushes the selection into the stack.
-* ⇧-⌘-v pastes the content in the clipboard and calls `stack-clipboard.py pop`
-* ⇧-⌥-⌘-v empties the stack calling `stack-clipboard.py empty`
+* ⌘-c Pushes the current clipboard content into the stack copies the selection.
+* ⌘-x Pushes the current clipboard content into the stack copies the selection.
+* ⇧-⌘-v Pops the stack into the clipboard and pastes this new element
+* ⇧-⌥-⌘-v Empties the stack calling `stack-clipboard.py empty`

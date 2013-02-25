@@ -29,9 +29,7 @@ def push():
 def pop():
     cb = load_cb()
     if len(cb):
-        cb.pop()
-        if len(cb):
-            setcb(cb[-1])
+        setcb(cb.pop())
     save_cb(cb)
 
 def empty():
