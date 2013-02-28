@@ -28,16 +28,18 @@ def push():
 
 def pop():
     cb = load_cb()
-    if len(cb):
+    if len(cb) > 0:
         setcb(cb.pop())
     save_cb(cb)
 
 def empty():
     save_cb([])
 
-registered = {"push": push,
-              "pop": pop,
-              "empty": empty}
+registered = {
+    "push": push,
+    "pop": pop,
+    "empty": empty
+    }
 
 if __name__ == '__main__':
     _, cmd = sys.argv
