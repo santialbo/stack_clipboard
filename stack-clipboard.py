@@ -1,7 +1,7 @@
 #!/usr/bin/python
 from pyperclip import setcb, getcb
 import pickle
-import sys, os
+import sys, os, platform
 
 CB_PATH = os.path.join(os.path.expanduser("~"), ".clipboard")
 
@@ -9,9 +9,15 @@ def open_cb(perm):
     try:
         return open(CB_PATH, perm)
     except IOError:
-        with open(CB_PATH, 'w+') as f:
-            pickle.dump([], f)
+        create_empty()
         return open(CB_PATH, perm)
+
+def create_empty():
+    with open(CB_PATH, 'w+') as f:
+        pickle.dump([], f)
+    if os.name == 'nt' or platform.system() == 'Windows':
+        import win32con, win32api
+        win32api.SetFileAttributes(CB_PATH, win32con.FILE_ATTRIBUTE_HIDDEN)
 
 def load_cb():
     with open_cb("rb") as f:
