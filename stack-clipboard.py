@@ -4,6 +4,7 @@ import pickle
 import sys, os, platform
 
 CB_PATH = os.path.join(os.path.expanduser("~"), ".clipboard")
+CB_SIZE = 100
 
 def open_cb(perm):
     try:
@@ -29,6 +30,8 @@ def save_cb(cb):
 
 def push():
     cb = load_cb()
+    if len(cb) > CB_SIZE:
+        cb.pop(0)
     cb.append(getcb())
     save_cb(cb)
 
